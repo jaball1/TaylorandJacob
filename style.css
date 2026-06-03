@@ -1,0 +1,343 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Lora', serif;
+    background: #0C1A12;
+    color: #E9E4D8;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    color: #C6A667;
+    letter-spacing: 1px;
+}
+
+.section {
+    padding: 100px 40px;
+    text-align: center;
+}
+
+.section.dark {
+    background: #15241E;
+}
+
+.section-title {
+    font-size: 2.7rem;
+    margin-bottom: 30px;
+}
+
+.section-text {
+    max-width: 750px;
+    margin: auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+/* =========================
+   NAVIGATION BAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 16px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(12, 26, 18, 0.55);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(198, 166, 103, 0.3);
+    z-index: 100;
+}
+
+.logo {
+    font-size: 1.4rem;
+    color: #C6A667;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #E9E4D8;
+    font-size: 1.05rem;
+    transition: 0.25s;
+}
+
+.nav-links li a:hover {
+    color: #C6A667;
+    text-shadow: 0 0 8px #C6A667;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: #C6A667;
+    cursor: pointer;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero {
+    height: 100vh;
+    background-image: url("IMG_5971.JPG");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(12, 26, 18, 0.75);
+    backdrop-filter: blur(2px);
+}
+
+.hero h1,
+.hero h2,
+.hero p {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.6rem;
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 2.2rem;
+}
+
+.date {
+    margin-top: 12px;
+    font-size: 1.1rem;
+}
+
+/* =========================
+   DETAILS SECTION
+========================= */
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    margin-top: 40px;
+}
+
+.detail-card {
+    margin-top: 20px;
+    background: #2B473A;
+    padding: 28px;
+    border-radius: 10px;
+    border: 1px solid #C6A667;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 18px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    border-radius: 10px;
+    border: 2px solid #C6A667;
+    filter: brightness(0.75);
+    transition: 0.35s;
+}
+
+.gallery-grid img:hover {
+    filter: brightness(1);
+    transform: scale(1.03);
+}
+
+/* =========================
+   RSVP FORM
+========================= */
+
+.rsvp-form {
+    max-width: 520px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rsvp-form input,
+.rsvp-form textarea,
+.rsvp-form select {
+    padding: 14px;
+    border-radius: 7px;
+    background: #2B473A;
+    color: #E9E4D8;
+    border: 1px solid #C6A667;
+    font-family: inherit;
+}
+
+.rsvp-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.rsvp-form button {
+    padding: 14px;
+    background: #C6A667;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    color: #0C1A12;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.rsvp-form button:hover {
+    background: #e2c17e;
+    box-shadow: 0 0 12px rgba(198, 166, 103, 0.8);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 25px;
+    text-align: center;
+    background: #0C1A12;
+    color: #C6A667;
+}
+
+/* =========================
+   FIRELIES BACKGROUND
+========================= */
+
+.fireflies::before,
+.fireflies::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(circle, rgba(255,255,200,0.8) 2px, transparent 4px) 0 0,
+        radial-gradient(circle, rgba(255,255,200,0.8) 2px, transparent 4px) 120px 200px,
+        radial-gradient(circle, rgba(255,255,200,0.8) 2px, transparent 4px) 300px 500px;
+    background-size: 400px 400px;
+    animation: float 12s linear infinite;
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+@keyframes float {
+    from { transform: translateY(0); }
+    to   { transform: translateY(-250px); }
+}
+
+/* =========================
+   MOBILE STYLES
+========================= */
+
+@media (max-width: 800px) {
+
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        right: -280px;
+        width: 240px;
+        height: 100vh;
+        background: rgba(21, 36, 30, 0.97);
+        flex-direction: column;
+        gap: 25px;
+        padding-top: 40px;
+        transition: 0.3s;
+    }
+
+    .nav-links.open {
+        right: 0;
+    }
+
+    .hero h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero h2 {
+        font-size: 1.6rem;
+    }
+}
+
+.form-embed {
+  max-width: 700px;
+  margin: 0 auto;
+  border: 1px solid rgba(198, 166, 103, 0.35);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   REGISTRY
+========================= */
+
+.registry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.registry-card {
+
+    display: block;
+    text-decoration: none;
+
+    background: #2B473A;
+    border: 1px solid #C6A667;
+
+    border-radius: 10px;
+
+    padding: 30px;
+
+    color: #E9E4D8;
+
+    transition: 0.3s;
+}
+
+.registry-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 0 20px rgba(198,166,103,0.5);
+
+    border-color: #e2c17e;
+}
+
+.registry-card h3 {
+
+    color: #C6A667;
+    margin-bottom: 10px;
+}
