@@ -141,6 +141,16 @@ h1, h2, h3 {
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
+.venue-card {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.venue-card:hover {
+  transform: translateY(-4px);
+}
+
 
 .slideshow-container {
   position: relative;
@@ -343,4 +353,52 @@ footer {
 
     color: #C6A667;
     margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .slide {
+    max-width: 95%;
+    max-height: 60vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+
+  .date {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .prev,
+  .next {
+    padding: 16px 20px;
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  iframe {
+    height: 900px;
+  }
 }
