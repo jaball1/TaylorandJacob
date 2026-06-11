@@ -37,10 +37,6 @@ h1, h2, h3 {
     line-height: 1.8;
 }
 
-/* =========================
-   NAVIGATION BAR
-========================= */
-
 .navbar {
     position: fixed;
     top: 0;
@@ -87,10 +83,6 @@ h1, h2, h3 {
     cursor: pointer;
 }
 
-/* =========================
-   HERO SECTION
-========================= */
-
 .hero {
     height: 100vh;
     background-image: url("IMG_5971.JPG");
@@ -132,9 +124,6 @@ h1, h2, h3 {
     font-size: 1.1rem;
 }
 
-/* =========================
-   DETAILS SECTION
-========================= */
 
 .details-grid {
     display: grid;
@@ -152,32 +141,62 @@ h1, h2, h3 {
     box-shadow: 0 0 15px rgba(0,0,0,0.3);
 }
 
-/* =========================
-   GALLERY
-========================= */
 
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 18px;
+.slideshow-container {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
 }
 
-.gallery-grid img {
-    width: 100%;
-    border-radius: 10px;
-    border: 2px solid #C6A667;
-    filter: brightness(0.75);
-    transition: 0.35s;
+.slide {
+  display: none;
+  max-width: 90%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+
+  margin: 0 auto;
+
+  border: 2px solid #C6A667;
+  border-radius: 18px;
 }
 
-.gallery-grid img:hover {
-    filter: brightness(1);
-    transform: scale(1.03);
+.fade {
+  animation: fadeEffect 1s;
 }
 
-/* =========================
-   RSVP FORM
-========================= */
+@keyframes fadeEffect {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(20, 35, 25, 0.75);
+  color: #d4af37;
+  border: none;
+  font-size: 28px;
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev {
+  left: -20px;
+}
+
+.next {
+  right: -20px;
+}
+
+.prev:hover,
+.next:hover {
+  background: rgba(0, 0, 0, 0.85);
+}
 
 .rsvp-form {
     max-width: 520px;
@@ -219,20 +238,12 @@ h1, h2, h3 {
     box-shadow: 0 0 12px rgba(198, 166, 103, 0.8);
 }
 
-/* =========================
-   FOOTER
-========================= */
-
 footer {
     padding: 25px;
     text-align: center;
     background: #0C1A12;
     color: #C6A667;
 }
-
-/* =========================
-   FIRELIES BACKGROUND
-========================= */
 
 .fireflies::before,
 .fireflies::after {
@@ -253,10 +264,6 @@ footer {
     from { transform: translateY(0); }
     to   { transform: translateY(-250px); }
 }
-
-/* =========================
-   MOBILE STYLES
-========================= */
 
 @media (max-width: 800px) {
 
@@ -298,10 +305,6 @@ footer {
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.25);
 }
-
-/* =========================
-   REGISTRY
-========================= */
 
 .registry-grid {
     display: grid;
